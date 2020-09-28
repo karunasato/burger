@@ -1,0 +1,29 @@
+<div class="jumbotron bg-danger">
+    <h1 class="display-3">BURGERS IZAKAYA</h1>
+    <p class="lead">Best cheese sashimi burgers in the world.</p>
+    <hr class="my-4">
+</div>
+
+
+<div class="row">
+    <div class="col-6 pl-5 pr-5 justify-content-center">
+        <h2>Burgers waiting to be devoured</h2>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <h1 style="width: 60%;display:inline-block">{{burger_name}}</h1>
+        <button data-devour="" id="{{id}}">Devour</button>
+        {{/unless}}
+        {{/each}}
+
+    </div>
+    <div class="col-6 pl-5 pr-5 justify-content-center">
+        <h2>Burgers devoured</h2>
+        {{#each burgers}}
+        {{#if devoured}}
+         <h1 style="width: 60%;display:inline-block">{{burger_name}}</h1>
+        <button data-devour="1" id="{{id}}">Throw Up</button>
+        {{/if}}
+        {{/each}}
+
+    </div>
+</div>

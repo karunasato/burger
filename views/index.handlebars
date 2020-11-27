@@ -1,6 +1,6 @@
-<div class="jumbotron bg-danger">
-    <h1 class="display-3">BURGERS IZAKAYA</h1>
-    <p class="lead">Best cheese sashimi burgers in the world.</p>
+<div class="jumbotron bg-info">
+    <h1 class="display-3">BURGERS IZAKAYA <img style= "width: 200px; height:200px" src="css\img\burger.png"></h1>  
+    <p class="lead">Best burgers in the world!</p>
     <hr class="my-4">
 </div>
 
@@ -16,14 +16,33 @@
         {{/each}}
 
     </div>
+
+    
+
     <div class="col-6 pl-5 pr-5 justify-content-center">
         <h2>Burgers devoured</h2>
         {{#each burgers}}
         {{#if devoured}}
          <h1 style="width: 60%;display:inline-block">{{burger_name}}</h1>
-        <button data-devour="1" id="{{id}}">Throw Up</button>
+        <button data-devour="1" id="{{id}}">Not Devoured</button>
         {{/if}}
         {{/each}}
 
     </div>
 </div>
+<h2>Add a burger</h2>
+<form class="create-form">
+
+  <div class="form-group" class="col-6 pl-5 pr-5 justify-content-center">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="burger_name">
+  </div>
+
+  <div class="col-6 pl-5 pr-5 justify-content-center">
+    <label for="devoured">Has it been eaten?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
+    <input type="radio" name="devoured" value="0"> Not Devoured!
+  </div>
+
+  <button type="submit">Add Burger</button>
+</form>
